@@ -1,0 +1,44 @@
+def fiveLines():
+    i=0
+    while i<5:
+        print " "
+        i=i+1
+fiveLines()
+
+def cleanScreen():
+    i=0
+    while i<25:
+        print " "
+        i=i+1
+cleanScreen()
+
+def deleteLowercase(p):
+    return p.upper()
+print deleteLowercase('hellorer')
+
+def isRightLetter(c):
+    consonnes="bcdfghjklmnpqrstvwxyz"
+    vow="aeiou"
+    for letra in c:
+        if letra not in consonnes:
+            return False
+        elif len(c)>1:
+            return False
+        else:
+            return True
+print isRightLetter("e")
+
+def countWords(p):
+    palabras=p.split()
+    i=0
+    while i<len(palabras):
+        palabra=palabras[i] 
+        if palabra == 'Fin':
+            break
+        i=i+1
+        parabla=i
+    if parabla<4:
+        return True
+    else:
+        return False
+print countWords("mama mamama mamama msmsmsmsm amamamma")
