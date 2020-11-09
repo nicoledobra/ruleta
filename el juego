@@ -44,6 +44,7 @@ def countWords(p):
 print countWords("mama mamama mamama msmsmsmsm amamamma")
 
 def countWords(p):
+    word="abcdefghijklmnopqrstuvwxyz"
     palabras=p.split()
     i=0
     while i<len(palabras):
@@ -51,12 +52,9 @@ def countWords(p):
         if palabra == 'Fin':
             break
         i=i+1
-        parabla=i
-    
-        if palabras=="abcdefghijklmnopqrstuvwxyz":
+        palabra=i
+    for palabras in word:
+        if palabra<4:
             return True
-                
-        else:
-            return False
-
-print countWords("msmsmsmsm amamrewamma fdfasf")
+    return False
+print countWords("msmsmsmsm ama4mrewamma fdfasf ertty")
