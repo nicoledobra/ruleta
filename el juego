@@ -30,31 +30,21 @@ print isRightLetter("e")
 
 def countWords(p):
     palabras=p.split()
-    i=0
-    while i<len(palabras):
-        palabra=palabras[i] 
-        if palabra == 'Fin':
-            break
-        i=i+1
-        parabla=i
-    if parabla<4:
+    if len(palabras)<=3:
         return True
     else:
         return False
-print countWords("mama mamama mamama msmsmsmsm amamamma")
+print countWords("tre tr4etr tretw")
 
-def countWords(p):
+def isACorrectPanel(p):
     word="abcdefghijklmnopqrstuvwxyz"
     palabras=p.split()
-    i=0
-    while i<len(palabras):
-        palabra=palabras[i] 
-        if palabra == 'Fin':
-            break
-        i=i+1
-        palabra=i
+    if len(palabras)<=3:
+        return True
+    else:
+        return False
     for palabras in word:
         if palabra<4:
             return True
     return False
-print countWords("msmsmsmsm ama4mrewamma fdfasf ertty")
+print isACorrectPanel("msmsmsmsm ama4mrewamma fdfasf ertty")
