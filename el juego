@@ -77,3 +77,9 @@ def updateSecretWord(w, sw, c):
         i=i+1
     return o
 print updateSecretWord("hello", "____o", "b")
+
+
+import random
+def generateNumber():
+    return random.randint(0,5)
+print generateNumber()
