@@ -83,3 +83,12 @@ import random
 def generateNumber():
     return random.randint(0,5)
 print generateNumber()
+
+
+def updatePoints(sw, c):
+    i=0
+    for letter in sw:
+        if letter==c:
+            i=i+1
+    return i
+print updatePoints("h___o", "b")
