@@ -64,3 +64,16 @@ print secretPanel("gfgcbn yrytfytf")
 def containsLetter(p, c):
     return c in p
 print containsLetter("hello", "b")
+
+
+def updateSecretWord(w, sw, c):
+    o=""
+    i=0
+    while i<len(w):
+        if w[i]==c:
+            o=o+c
+        else:
+            o=o+sw[i]
+        i=i+1
+    return o
+print updateSecretWord("hello", "____o", "b")
