@@ -104,3 +104,6 @@ print "play"
 
 punto=0
 final=False
+
+while not correctPanel(secret, word) and not final:
+    print ""
