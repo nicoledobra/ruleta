@@ -36,15 +36,15 @@ def countWords(p):
         return False
 print countWords("tre tr4etr tretw")
 
+import string
+
 def isACorrectPanel(p):
-    word="abcdefghijklmnopqrstuvwxyz"
-    palabras=p.split()
-    if len(palabras)<=3:
-        return True
-    else:
+    if not countWords(p):
         return False
-    for palabras in word:
-        if palabra<4:
-            return True
-    return False
-print isACorrectPanel("msmsmsmsm ama4mrewamma fdfasf ertty")
+    else:
+        for letter in p:
+            if not (letter in string.letters or letter == " "):
+                return False
+        return True
+print isACorrectPanel("trgfsdg 453rtet trefgsd")
+
