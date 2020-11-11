@@ -60,3 +60,7 @@ def secretPanel(p):
     return o
 print secretPanel("gfgcbn yrytfytf")
 
+
+def containsLetter(p, c):
+    return c in p
+print containsLetter("hello", "b")
