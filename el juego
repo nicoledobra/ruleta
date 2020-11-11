@@ -92,3 +92,9 @@ def updatePoints(sw, c):
             i=i+1
     return i
 print updatePoints("h___o", "b")
+
+
+def correctPanel(w,sol):
+    return w==sol
+print correctPanel("hello", "hello")
+
