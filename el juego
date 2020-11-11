@@ -48,3 +48,15 @@ def isACorrectPanel(p):
         return True
 print isACorrectPanel("trgfsdg 453rtet trefgsd")
 
+def secretPanel(p):
+    o=""
+    i=0
+    while i<len(p):
+        if p[i]==" ":
+            o=o+" "
+        else:
+            o=o+"_"
+        i=i+1
+    return o
+print secretPanel("gfgcbn yrytfytf")
+
