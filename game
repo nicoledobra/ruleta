@@ -1,0 +1,106 @@
+def fiveLines():
+    i=0
+    while i<5:
+        print " "
+        i=i+1
+
+
+def cleanScreen():
+    i=0
+    while i<25:
+        print " "
+        i=i+1
+
+
+def deleteLowercase(p):
+    return p.upper()
+
+
+def isRightLetter(c):
+    consonnes="bcdfghjklmnpqrstvwxyz"
+    vow="aeiou"
+    for letra in c:
+        if letra not in consonnes:
+            return False
+        elif len(c)>1:
+            return False
+        else:
+            return True
+
+
+def countWords(p):
+    palabras=p.split()
+    if len(palabras)<=3:
+        return True
+    else:
+        return False
+
+
+import string
+def isACorrectPanel(p):
+    if not countWords(p):
+        return False
+    else:
+        for letter in p:
+            if not (letter in string.letters or letter == " "):
+                return False
+        return True
+
+
+def secretPanel(p):
+    o=""
+    i=0
+    while i<len(p):
+        if p[i]==" ":
+            o=o+" "
+        else:
+            o=o+"_"
+        i=i+1
+    return o
+
+
+
+def containsLetter(p, c):
+    return c in p
+
+
+
+def updateSecretWord(w, sw, c):
+    o=""
+    i=0
+    while i<len(w):
+        if w[i]==c:
+            o=o+c
+        else:
+            o=o+sw[i]
+        i=i+1
+    return o
+
+
+
+import random
+def generateNumber():
+    return random.randint(0,5)
+
+
+
+def updatePoints(sw, c):
+    i=0
+    for letter in sw:
+        if letter==c:
+            i=i+1
+    return i
+def correctPanel(w,sol):
+    return w==sol
+
+print "Welcome to game"
+gamer=raw_input("gamer introduce the panel: ")
+while not isACorrectPanel(gamer):
+    print "incorrect word"
+    gamer=raw_input("gamer introduce the panel: ")
+word=deleteLowercase(gamer)
+secret=secretPanel(word)
+print "play"
+
+punto=0
+final=False
