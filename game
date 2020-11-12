@@ -93,17 +93,47 @@ def updatePoints(sw, c):
 def correctPanel(w,sol):
     return w==sol
 
-print "Welcome to game"
-gamer=raw_input("gamer introduce the panel: ")
+print "Bienvenidos a la ruleta de la fortuna"
+gamer=raw_input("Administrador introduce the panel: ")
 while not isACorrectPanel(gamer):
-    print "incorrect word"
-    gamer=raw_input("gamer introduce the panel: ")
+    print "Panel incorrecto"
+    gamer=raw_input("Administrador introduce the panel: ")
 word=deleteLowercase(gamer)
 secret=secretPanel(word)
-print "play"
+print "Juguemos!"
 
 punto=0
 final=False
 
 while not correctPanel(secret, word) and not final:
-    print ""
+    puntos=generateNumber()
+    print "La jugada sera de ", puntos , "puntos"
+    print "El panel secreto es:", secret
+    answer = raw_input("Quieres resolver el panel? (Y/N):")
+    while answer != "N" and answer != "Y":
+		  print "Respuesta incorrecta."
+		  answer = raw_input("Quieres resolver el panel? (Y/N):")
+    if answer == "N":
+      letter = raw_input("Pues digame una letra: ")
+      if not isRightLetter(letter):
+        print "Letra equivocada"
+      else:
+        letter = deleteLowercase(letter)
+        if not containsLetter(word, letter):
+          print "La letra no esta en el panel"
+        else:
+          secret = updateSecretWord(word, secret, letter)
+          print secret
+          punto=punto+puntos
+
+    else:
+		  solution = raw_input("Cual es la solucion? ")
+		  solution = deleteLowercase(solution)
+		  print word, solution
+		  if not correctPanel(word, solution):
+			  print "No es correcto"
+		  else:
+			  print "Felicidades!"
+			  final = True
+print "El Panel secreto es", word
+print "Has ganado",punto ,"puntos en total "
